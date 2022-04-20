@@ -15,5 +15,17 @@ describe DatabaseConnection do
       expect(DatabaseConnection.connection).to eq connection
     end
   end
+  
+  describe '.query' do
+    it 'executes a query via PG' do
+      connection = DatabaseConnection.setup('makers_bnb_test')
+  
+      expect(connection).to receive(:exec_params).with("SELECT * FROM properties;", [])
+  
+      DatabaseConnection.query("SELECT * FROM properties;")
+    end
+  end
+
 end
+
 
