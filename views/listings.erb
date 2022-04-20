@@ -68,8 +68,63 @@
 	</body>
 </html>
 
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 190px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Currently avaliable properties</h2>
+<h3> Select the property to book and have an excellent stay : </h3>
+
 <ul> 
   <% @listings.each do |listing| %> 
-    <li> <%= listing.name %> : <%= listing.description %> (£<%= listing.price_per_night %> per night)</li>
-  <% end %>
+<div class="row">
+  <div class="column" style="background-color:#F0F8FF;">
+    <h4>Propertry Name</h4>
+    <%= listing.name %>
+  </div>
+  <div class="column" style="background-color:#FDF5E6;">
+    <h4>Property Description</h4>
+    <%= listing.description %>
+  </div>
+  <div class="column" style="background-color:#F0FFF0;">
+    <h4>Price per night (in GBP)</h4>
+    £<%= listing.price_per_night %> per night
+  </div>
+</div>
+<% end %>
 </ul>
+
+</body>
+</html>
+
+
