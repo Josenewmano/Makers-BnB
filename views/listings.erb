@@ -76,7 +76,28 @@
 * {
   box-sizing: border-box;
 }
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
 
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {
+  box-shadow: 0 10px 14px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+}
 /* Create three equal columns that floats next to each other */
 .column {
   float: left;
@@ -118,7 +139,10 @@
   </div>
   <div class="column" style="background-color:#F0FFF0;">
     <h4>Price per night (in GBP)</h4>
-    £<%= listing.price_per_night %> per night
+    £<%= listing.price_per_night %> per night<br>
+		<form action="/booking" method="get">
+			<br><br><button class="button button2">Book this place</button>
+		</form>
   </div>
 </div>
 <% end %>
