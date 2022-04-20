@@ -27,7 +27,7 @@ class Property
     else  
       connection = PG.connect(dbname: 'makers_bnb')
     end
-    result = connection.exec("INSERT INTO properties (name, description, price_per_night) VALUES('#{name}', '#{description}', '#{price_per_night}') RETURNING id, name, description, price_per_night")
+    result = connection.exec_params("INSERT INTO properties (name, description, price_per_night) VALUES($1, $2, $3) RETURNING id, name, description, price_per_night", [name, description, price_per_night])
     Property.new(id: result[0]['id'], name: result[0]['name'], description: result[0]['description'], price_per_night: result[0]['price_per_night'])
   end
 
