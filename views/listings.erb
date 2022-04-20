@@ -1,5 +1,5 @@
 <ul> 
   <% @listings.each do |listing| %> 
-    <li> <%= listing %> </li>
+    <li> <%= listing.name %> : <%= listing.description %> (£<%= listing.price_per_night %> per night)</li>
   <% end %>
 </ul>
