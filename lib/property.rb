@@ -13,4 +13,13 @@ class Property
     result.map { |property| property['name']}
   end
 
+  def self.create(name:)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'makers_bnb_test')
+    else  
+      connection = PG.connect(dbname: 'makers_bnb')
+    end
+    connection.exec("INSERT INTO properties (name) VALUES('#{name}');")
+  end
+
 end
