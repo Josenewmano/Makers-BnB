@@ -21,9 +21,7 @@ class MakersBnB < Sinatra::Base
   end
   
   post '/listings/new/add' do
-    name = params['name']
-    connection = PG.connect(dbname: 'makers_bnb_test')
-    connection.exec("INSERT INTO properties (name) VALUES('#{name}')")
+    Property.create(name: params[:name], description: params[:description], price_per_night: params[:price_per_night])
     redirect '/listings'
   end
 
