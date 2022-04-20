@@ -1,3 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- The name between <title> tag defines the title of the document. -->
+
+		<title>MakersBnB</title>
+	</head>
+	<body>
+
+		<!-- This is to display the Navbar of the website. -->
+		<!-- Styling is added inline so that navbar appears on the image -->
+
+		<nav>
+			<ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: rgba(0,0,0,0.3);">
+				<li style="float: right;"><a href="#contact" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Help</a></li>
+				<li style="float: right;"><a href="#about" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">SignUp</a></li>
+				<li style="float: right;"><a href="#login" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Login</a></li>
+			</ul>
+		</nav>
+		<div style="display: flex; padding-bottom: 100px">
+
+			<!-- This is to display the Background-image which uses Flex property. -->
+
+			<img src="https://a0.muscache.com/4ea/air/r:w775-h300-sfit,e:fjpg-c80/pictures/318dae49-6efb-484c-b4d2-b3d84c2bcd4e.jpg" width="100%" height="500" style="position: absolute;">
+
+			<!-- This is to make the Form Contents with position relative so that in appears on the Image -->
+
+			<form action="/" style="position: relative; margin: 130px; max-width: 200px; padding: 16px; background-color: white;">
+				<h2>Book unique home and experiences</h2>
+				
+
+				
+			</form>
+
+			<!-- Form Ends here. -->
+
+		</div>
+
+		<!-- The below section displays the Reviews and Feedbacks given by the users. -->
+
+		<div style="padding: 2px 100px;">
+			<h3>What guests are saying about homes in the United Kingdon</h3>
+			<p>UK homes were rated
+				<strong>4.6 out of 5 stars</strong>
+				with <strong> 210,000+ reviews </strong>
+			</p><br />
+		</div>
+
+		<!-- Reviews and Feedbacks which uses Flex property, includes images  -->
+
+		<div style="display: flex; justify-content:center; align-items: center;">
+			<div style=" margin: 10px; padding: 5px 50px;">
+				<img src="https://a0.muscache.com/im/pictures/8650182/506aa978_original.jpg?aki_policy=large" height="200"><br />
+			</div>
+			<div style=" margin: 10px; padding: 5px 50px;">
+				<img src="https://a0.muscache.com/im/pictures/7517954/21419416_original.jpg?aki_policy=large" height="200"><br />
+			</div>
+			<div style=" margin: 10px; padding: 5px 50px;">
+				<img src="https://a0.muscache.com/im/pictures/d90a9b58-80da-4148-8a1c-2a1f1218d575.jpg?aki_policy=large" height="200"><br />
+			</div>
+		</div>
+
+		<!-- Reviews and Feedbacks which uses Flex property, includes text  -->
+
+		
+	</body>
+</html>
+
 <ul> 
   <% @listings.each do |listing| %> 
     <li> <%= listing.name %> : <%= listing.description %> (£<%= listing.price_per_night %> per night)</li>
