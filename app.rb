@@ -16,5 +16,16 @@ class MakersBnB < Sinatra::Base
     erb :listings
   end
 
+  get '/listings/new' do
+    erb :'listings/new'
+  end
+  
+  post '/listings/new/add' do
+    name = params['name']
+    connection = PG.connect(dbname: 'makers_bnb_test')
+    connection.exec("INSERT INTO properties (name) VALUES('#{name}')")
+    redirect '/listings'
+  end
+
   run! if app_file == $0
 end
