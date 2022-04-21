@@ -31,8 +31,8 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/booking/confirmation' do
-    p 'I am here '
-    erb :confirmation
+    erb :'confirmation'
+    
   end
 
   post '/booking/new' do
