@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -42,7 +41,7 @@
       .banner {
       position: relative;
       height: 210px;
-      background-image: url("https://cdn.pixabay.com/photo/2015/09/21/14/45/banner-header-949928_960_720.jpg");      background-size: cover;
+      background-image: url("https://images.unsplash.com/photo-1506765515384-028b60a970df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80");      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -122,32 +121,57 @@
       width: calc(100% - 12px);
       }
       }
- </style>
+    </style>
   </head>
   <body>
     <div class="testbox">
-    <form action="/listings/new/add" method="post">
+      <form action="/">
         <div class="banner">
-          <h1>Property Listing</h1>
+          <h1>MakersBnB Application Form</h1>
         </div>
         <div class="item">
-          <p>Name: </p>
+          <p>Name</p>
           <div class="name-item">
-          <input type="text" name="name" placeholder="Property" />
+            <input type="text" name="name" placeholder="First" />
+            <input type="text" name="name" placeholder="Last" />
           </div>
         </div>
+        <div class="contact-item">
+          <div class="item">
+            <p>Email</p>
+            <input type="text" name="name"/>
+          </div>
+          <div class="item">
+            <p>Phone</p>
+            <input type="text" name="name"/>
+          </div>
+        </div>
+        
+
         <div class="item">
-          <p>Description of Space: </p>
-          <input type="text" name="description" placeholder="Description" />
+          <p>Any Restrictions</p>
+          <textarea rows="3" required></textarea>
         </div>
         <div class="item">
-          <p>Price Per Night: </p>
-          <input type="text" name="price_per_night"/>
-        </div> 
-        <div class="btn-block">  
+          <p>If you are looking for property to share, describe below any preferences </p>
+          <textarea rows="3" required></textarea>
         </div>
+        
+        <div class="item">
+          <p>Number of nights you are booking this property for: </p>
+          <input type="text" name="name"/>
+        </div>
+        <div class="item">
+          <p>Please provide any other pertinent information</p>
+          <textarea rows="3" required></textarea>
+        </div>
+        <div class="btn-block">
+          
+        </div>
+      </form>
     </div>
-   		<br><br><button class="button button2">Submit this place</button>
+    <form action="/booking/confirmation" method="get">
+			<br><br><button class="button button2">Book this place</button>
 		</form>
   </body>
 </html>

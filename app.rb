@@ -15,7 +15,7 @@ class MakersBnB < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Hello World'
+    'Hello world'
   end
   
   get '/listings' do
@@ -30,6 +30,18 @@ class MakersBnB < Sinatra::Base
   post '/listings/new/add' do
     Property.create(name: params[:name], description: params[:description], price_per_night: params[:price_per_night])
     redirect '/listings'
+  end
+get '/booking' do
+    erb :booking
+  end
+
+  get '/booking/confirmation' do
+    erb :'confirmation'
+    
+  end
+
+  post '/booking/new' do
+    redirect '/booking/confirmation'
   end
 
   get '/users/new' do
