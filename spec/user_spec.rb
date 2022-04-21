@@ -8,6 +8,11 @@ describe User do
       expect(user.username).to eq 'IdeasMan'
       expect(user.email).to eq 'email@email.co.uk'
     end
+    it 'encrypts passwords using bcrypt' do
+      expect(BCrypt::Password).to receive(:create).with('pwpwpwpw')
+
+      user = User.create(username:'IdeasMan', email:'email@email.co.uk', password: 'pwpwpwpw')
+    end
   end
   context '.authenticate' do
     it 'returns the correct user, if it exists' do
