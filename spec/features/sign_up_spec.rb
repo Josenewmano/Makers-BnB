@@ -6,6 +6,6 @@ feature 'Sign up' do
     fill_in('password', with: 'newpassword')
     click_button('Register')
 
-    expect(page).to have_content 'Proof that the route works'
+    expect(page).to have_content 'Currently available properties'
   end
 end

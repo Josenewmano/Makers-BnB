@@ -7,6 +7,6 @@ feature 'Log in' do
     fill_in('password', with: 'pwpwpwpw')
     click_button('Sign in')
 
-    expect(page).to have_content 'Proof that the route works'
+    expect(page).to have_content 'Currently available properties'
   end
 end
