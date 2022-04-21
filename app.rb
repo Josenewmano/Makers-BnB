@@ -9,7 +9,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/' do
-    'Hello World'
+    'Hello world'
   end
   
   get '/listings' do
@@ -30,5 +30,13 @@ class MakersBnB < Sinatra::Base
     erb :booking
   end
 
+  get '/booking/confirmation' do
+    erb :'confirmation'
+    
+  end
+
+  post '/booking/new' do
+    redirect '/booking/confirmation'
+  end
   run! if app_file == $0
 end
