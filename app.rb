@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/flash'
 require_relative './lib/property'
+require_relative './lib/user'
 require_relative './database_connection_setup'
 
 class MakersBnB < Sinatra::Base
@@ -47,6 +48,7 @@ class MakersBnB < Sinatra::Base
 
   post '/sessions' do
     user = User.authenticate(username: params[:username], password: params[:password])
+    p user
     session[:user_id] = user.id
     redirect '/listings'
   end
