@@ -41,7 +41,7 @@
       .banner {
       position: relative;
       height: 210px;
-      background-image: url("https://cdn3.photostockeditor.com/h/0701/mansion-floor-home-ceiling-property-image.jpg");      background-size: cover;
+      background-image: url("");      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -165,11 +165,13 @@
           <p>Please provide any other pertinent information</p>
           <textarea rows="3" required></textarea>
         </div>
-         <form action="/booking/new" method="post">
         <div class="btn-block">
-			<br><br><button class="button button2">Book this place</button>
+          
         </div>
       </form>
     </div>
+    <form action="/booking/confirmation" method="get">
+			<br><br><button class="button button2">Book this place</button>
+		</form>
   </body>
 </html>
