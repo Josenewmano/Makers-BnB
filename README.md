@@ -75,7 +75,7 @@ Here is our trello board in action:
 
 ![Screenshot](https://i.imgur.com/HFi3nN9.png)
 
-To set up the bookmark manager database
+To set up the Makers BnB database
 -----
 
 Connect to `psql` and create the `makers_bnb` database:
