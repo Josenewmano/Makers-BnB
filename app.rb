@@ -15,7 +15,7 @@ class MakersBnB < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Hello world'
+    redirect '/listings'
   end
   
   get '/listings' do
