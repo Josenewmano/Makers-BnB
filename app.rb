@@ -15,11 +15,12 @@ class MakersBnB < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Hello world'
+    redirect '/listings'
   end
   
   get '/listings' do
     @listings = Property.all
+    @user = User.find(session[:user_id])
     erb :listings
   end
 
@@ -60,8 +61,12 @@ get '/booking' do
 
   post '/sessions' do
     user = User.authenticate(username: params[:username], password: params[:password])
-    p user
     session[:user_id] = user.id
+    redirect '/listings'
+  end
+
+  get '/sessions/kill' do
+    session[:user_id] = nil
     redirect '/listings'
   end
 
