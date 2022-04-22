@@ -109,7 +109,7 @@
   float: left;
   width: 33.33%;
   padding: 10px;
-  height: 190px; /* Should be removed. Only for demonstration */
+  height: 290px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -146,9 +146,19 @@
   <div class="column" style="background-color:#F0FFF0;">
     <h4>Price per night (in GBP)</h4>
     £<%= listing.price_per_night %> per night<br>
+		<% if @user != nil %>
 		<form action="/booking" method="get">
 			<br><br><button class="button button2">Book this place</button>
 		</form>
+		<% end %>
+		<% if @user == nil%>
+		<form action="/users/new" method="get">
+			<br><br><button class="button button2">Sign up to Book</button>
+		</form>
+		<form action="/sessions/new" method="get">
+			<br><br><button class="button button2">Log in to Book  </button>
+		</form>
+		<% end %>
   </div>
 </div>
 <% end %>
