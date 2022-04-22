@@ -13,11 +13,17 @@
 
 		<nav>
 			<ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: rgba(0,0,0,0.3);">
-				<li style="float: right;"><a href="#contact" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Help</a></li>
+				 
+				<% if @user == nil %>
+				 <li style="float: right;"><a href="/sessions/new" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Login</a></li>
+				<% end %>
+				<% if @user != nil%>
+				  <li style="float: right;"><a href="/listings" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Logout</a></li>
+				<% end %>
 				<li style="float: right;"><a href="/users/new" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">SignUp</a></li>
-				<li style="float: right;"><a href="/sessions/new" style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;">Login</a></li>
 			</ul>
 		</nav>
+
 		<div style="display: flex; padding-bottom: 100px">
 
 			<!-- This is to display the Background-image which uses Flex property. -->
