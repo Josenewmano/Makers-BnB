@@ -137,33 +137,25 @@
     <%= listing.description %>
   </div>
   <div class="column" style="background-color:#F0FFF0;">
-    <h4>Price per night (in GBP)</h4>
+    <h4>TEST per night (in GBP)</h4>
     £<%= listing.price_per_night %> per night<br>
+		</div>
 		<form action="/booking" method="get">
 			<br><br><button class="button button2">Book this place</button>
 		</form>
   </div>
 </div>
-
-
-<h1>Show Booking Dates</h1>
-
-<form action="/action_page.php">
-  <label for="start date">Start Date:</label>
-  <input type="date" id="date" name="date">
-  <input type="submit">
-</form>
-
-
-
-<form action="/action_page.php">
-  <label for="end date">End Date:</label>
-  <input type="date" id="date" name="date">
-  <input type="submit">
-</form>
+<% end %>
+</ul>
 
 </body>
 </html>
 
-<% end %>
-</ul>
+
+
+
+
+
+
+
+
