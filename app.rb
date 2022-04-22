@@ -65,5 +65,10 @@ get '/booking' do
     redirect '/listings'
   end
 
+  get '/sessions/kill' do
+    session[:user_id] = nil
+    redirect '/listings'
+  end
+
   run! if app_file == $0
 end
